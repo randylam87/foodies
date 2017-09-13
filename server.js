@@ -12,7 +12,7 @@ const passport = require('passport');
 //Mongo/Mongoose --------------------------------------------------------------
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
-const DBconnect = 'mongodb://tiger-foodie:benColeIsAwesome1@ds119578.mlab.com:19578/heroku_hlgv59g4';
+const DBconnect = 'mongodb://heroku_nw4cdrcw:1ugvn0ia962k55jn8c6svnsd5h@ds135514.mlab.com:35514/heroku_nw4cdrcw';
 
 // Configure DB
 mongoose.Promise = Promise;
