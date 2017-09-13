@@ -1,96 +1,47 @@
-# neighborhood-bake-sale
+Foodies
+===============
 
-Commands:
-```
-$ npm start
-```
-Use npm start to run the server, it will auto refresh react as well
+### Summary
+Conceptual web app based on the idea of turning a person's home kitchen into a business. Users are able to own their own home store and sell food to other users. Sellers are able to update their store prices, stock, and menu in real time. Users are able to purchse items and get real time feedback from sellers.
 
-```
-$ npm run build
-```
-When we are ready to deploy, use npm run build to create a build folder. The actual backend server will still need to be ran with nodemon server.js
+### Feature List
+- Users can be both buyers and sellers.
+- Buyers are able to search stores in an area and once they select a store, they can place an order with real time updates on order status as well as inventory changes. 
+- Buyers are able to bookmark stores as well as write reviews.
+- Order history, bookmarks and reviews are all accessable on a customer admin page.
+- Sellers are able to add and remove stock as they see fit and are able to accept and decline orders in real time.
 
-# For reference only, please update this later
-Stripe js (node)
-https://github.com/stripe/stripe-node
+### Technologies
+- MongoDB
+- Express
+- React
+- Node
+- JavaScript
+- Axios
+- HTML
+- CSS
+- Bootstrap 3
+- Socket.io
+- Passport using Local Strategies
+- JSON Web Token
 
-Passport with React
-https://vladimirponomarev.com/blog/authentication-in-react-apps-jwt
+### API
+- Google Maps API
 
-Google Maps (node)
-https://github.com/googlemaps/google-maps-services-js
+### Future Improvements
+- Cleaner log in / sign up UX
+- Add additional valdation on inputs
+- Utilize flash messages on errors
+- Additional styling on all of the pages including better mobile responsiveness
+- Add in filestack to allow users to add photos
+- Add Stripe for payment processing
+- Upgrade to Redux
+- Various bug fixes
 
-#Example request objects for API
-
-
-New User Object:
-
-```javascript
-{ 
-    "firstName": "John",
-    "lastName": "Smith",
-    "password": "1234567890",
-    "email": "new.email2@email.com",
-    "isSeller": true
-}
-```
-
-/user .put() example.  Put each user object to be updated in an object in a **users** array on the request object.  **Follow this pattern for all .put requests.**
-
-```javascript
-{ users: [
-        { 
-            "firstName": "John",
-            "lastName": "Smith",
-            "password": "1234567890",
-            "email": "new.email2@email.com",
-            "isSeller": true
-        }
-    ] 
-}
-```
-
-
-New Store Object:
-
-```javascript
-{ 
-    "sellerID": "5999d619126eaa49efa998e2",
-    "location": "123 Main Street, Here, CA 92831",
-    "hours": "[ {day: Monday, hours: 9-5}, {day: Tuesday, hours: 9-5}, {day: Wednesday, hours: 9-5}, {day: Thursday, hours: 9-5}, {day: Friday, hours: 9-5}, ]",
-    "description": "This is a short description about my store.  It is a store that sells things.",
-    "photos": "http://www.hamburgerhamlet.com/wp-content/uploads/2014/11/the-hamburger-hamlet-sherman-oaks-40.jpg", 
-    "certified": true
-}
-```
-
-
-New Menu Object:
-
-```javascript
-{
-    "StoreID": "599a328e98fd725b30e66b1a",
-    "name": "Pizza",
-    "image": "https://eatpizzafresca.com/images/pepperoni_pizza.jpg?crc=4023861219",
-    "description": "Super Mega Ultra Pizza",
-    "price": "1600",
-    "inventory": "100",
-    "active": "true"
-}
-```
-
-
-
-New Review Object:
-
-```javascript
-{
-    customerID: "5999d66b4c8d304a2ca72f9e",
-    "StoreID": "599a328e98fd725b30e66b1a",
-    review: This place has the best pizza, 
-    rating: 5, 
-    imageURL: http://s.storage.akamai.coub.com/get/b26/p/coub/simple/cw_timeline_pic/b527c0180dc/eb64b4e1c8b66e0d456c6/big_1464492066_image.jpg
-}
-```
-
+### Known bugs
+- Search button on home page is not a form submit and must be clicked
+- Refresh is required after log in otherwise the user will be redirected back to log in once they attempt to access a secure route
+- No frontend error handling on sign up or log in
+- Issue with bookmarks where only 1 user can bookmark a store at a time
+- Http vs https error on home page due to the search icon (should be moved to static files)
+- Users are able to access stores despite the store not being on as well as users being able to make orders outside of store hours
