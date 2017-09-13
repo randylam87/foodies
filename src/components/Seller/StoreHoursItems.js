@@ -19,18 +19,19 @@ class StoreHoursItems extends Component {
   render() {
     if (this.props.edit) {
       return (
-        <div className="form-group row">
-          <div className="col-lg-4 offset-lg-4">
-            <input className="form-control" name="title" type="text" onChange={ this.handleChange } defaultValue={ this.props.time } id="StoreHoursItems" />
-          </div>
-          <button className="btn btn-danger" onClick={ () => this.props.removeFromStateArray("hours", this.props.index) }>X</button>
+        <div className="form-group">
+            <label className="col-lg-2 col-form-label">{this.props.day}</label>
+            <div className="col-lg-10">
+              <input className="form-control col-lg-12" name="title" type="text" onChange={ this.handleChange } defaultValue={ this.props.time } id="StoreHoursItems" />
+            </div>
+          {/* <button className="btn btn-danger" onClick={ () => this.props.removeFromStateArray("hours", this.props.index) }>X</button> */}
         </div>
         );
     }
     return (
-      <li className="text-center">
-        { this.props.time }
-      </li>
+      <p className="col-lg-8 text-center">
+        { this.props.day + " - " + this.props.time }
+      </p>
       );
   }
 }

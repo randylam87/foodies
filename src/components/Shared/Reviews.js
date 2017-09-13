@@ -1,44 +1,20 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ReviewItem from './Reviews/ReviewItem';
 
-// Dummy review data
-let reviews = [
-  {
-    rating: '5',
-    reviewText: 'This place is amazing!'
-  },
-  {
-    rating: '4',
-    reviewText: 'The Pizza was so crispy!'
-  },
-  {
-    rating: '1',
-    reviewText: 'I got food poisoning :('
-  }
-]
-
 class Reviews extends Component {
-  constructor(props) {
-    super(props);
+  mapReviews() {
+    let mappedReviews = this.props.reviews.map((reviewItem, i) => {
+      return <ReviewItem key={ i } rating={ reviewItem.rating } review={ reviewItem.review } customerFirstName={reviewItem.customerFirstName} customerLastName={reviewItem.customerLastName} storeName={reviewItem.storeName}/>
+    });
 
-    this.mapReviews = this.mapReviews.bind(this);
-  }
-  
-
-
-  mapReviews () {
-    let showReviews = reviews.map( (reviewItem,i) => {
-      return <ReviewItem key={ i } rating={reviewItem.rating} reviewText={reviewItem.reviewText}/>
-    })
-
-    return showReviews;
+    return mappedReviews;
   }
 
   render() {
     return (
-      <ul className='list-unstyled mt-3'>
-        <strong>Current Reviews: </strong>
-        {this.mapReviews()}
+      <ul className='list-unstyled p-3 mt-3 border'>
+        <h3 className='mb-3' >Reviews: </h3>
+        { this.props.reviews ? this.mapReviews() : <li className='p-3 mb-3 border'><h6><strong>No Reviews Found </strong></h6></li> }
       </ul>
     )
   }

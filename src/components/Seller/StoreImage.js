@@ -11,21 +11,21 @@ class StoreImage extends Component {
       }
     
       handleChange(e) {
-        this.props.updateState("storeimage", e.target.value);
+        this.props.updateState("storeImage", e.target.value);
       }
 
     render() {
         if (!this.props.edit) {
             return (
-                <img className='img-fluid rounded mt-3' src={ this.props.storeImage } alt='Italian Bistro' />
+                <img className='img-fluid rounded' src={ this.props.storeImage } alt='Store Image' />
                 );
         }
         return (
             <div>
-              <h4 className="text-center">Store Photo</h4>
-              <div className="form-group row">
-                <div className="col-lg-10 offset-lg-1">
-                  <input className="form-control" name="storeimage" type="text" onChange={ this.handleChange } defaultValue={ this.props.storeImage } id="storeimage" />
+              <h4 className="text-center">Store Image</h4>
+              <div className="form-group row justify-content-lg-center">
+                <div className="col-lg-10">
+                  <input className="form-control" name="storeimage" type="text" onChange={ this.handleChange } value={ this.props.storeImage } id="storeimage" />
                 </div>
               </div>
             </div>

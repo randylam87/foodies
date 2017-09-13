@@ -19,9 +19,9 @@ class StoreDescription extends Component {
       return (
         <div>
           <h4 className="text-center">Store Description</h4>
-          <div className="form-group row">
-            <div className="col-lg-10 offset-lg-1">
-              <input className="form-control" name="description" type="text" onChange={ this.handleChange } defaultValue={ this.props.description } id="storedescription" />
+          <div className="form-group row justify-content-lg-center">
+            <div className="col-lg-10">
+              <input className="form-control" name="description" type="text" onChange={ this.handleChange } value={ this.props.description } id="storedescription" />
             </div>
           </div>
         </div>
