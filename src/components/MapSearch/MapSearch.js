@@ -38,7 +38,6 @@ export default class MapSearch extends Component {
                 .then((res) => {
                   locationData = this.buildDataLayer(res);
                   this.bindStoreData(res.data);                  
-                    // console.log(`This location data was just built from the db: ${JSON.stringify(locationData)}`);
                     resolve(locationData);
                     
                 })            
@@ -69,8 +68,6 @@ export default class MapSearch extends Component {
         this.setState({storeData: data}, function() {
             this.readyToRenderList();
         });
-        
-        // console.log(`!!!!!!!!!!!!!!!!!!!!!!!location data: ${JSON.stringify(this.state.storeData)}`);
     }
 
     readyToRenderList() {

@@ -14,8 +14,12 @@ body {
 
 .home-title {
   font-family: Lobster Two, cursive;
-  font-size: 8em;
+  font-size: 10em;
   color: #FBF7F7;
+}
+
+#search-bar {
+  width: 50%;
 }
 
 .white .white:hover,
@@ -68,7 +72,6 @@ a:visited {
 
 
 /* General commonly used styles */
-
 .border {
   border-width: 1px;
   border-style: solid;
@@ -78,14 +81,11 @@ a:visited {
   color: #d0021b;
 }
 
-
 /* Map Search */
-
 .search-map {
   display: block;
   height: 500px;
 }
-
 
 /* Store */
 

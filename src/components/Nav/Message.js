@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import MessageItems from "./MessageItems";
 import Auth from "../utils/Auth";
-import Helpers from "../utils/helpers";
 import io from 'socket.io-client';
 
 class Message extends Component {

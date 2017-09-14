@@ -62,7 +62,7 @@ class Home extends Component {
   render() {
     return (
       <div className="img-fluid rounded" alt="Home">
-        <h1 className="text-center white home-title">Foodies</h1>
+        <h1 className="text-center home-title">Foodies</h1>
         { this.state.latLng ? (
           <MapSearch latLng={ this.state.latLng } searchCity={ this.state.searchCity } />
           ) : (

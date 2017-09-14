@@ -38,6 +38,7 @@ class Nav extends Component {
         }
       })
       this.setState({messages: activeOrders})
+      return;
     });
    
   }

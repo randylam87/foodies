@@ -1,33 +1,27 @@
 import React, { Component } from 'react';
 
-
 export default class Search extends Component {
   render () {
     return (
-    <div className="search-container">
+    <form className='align-self-center' id="search-container" onSubmit={this.props.handleSubmit}>
       <input 
         onChange={this.props.handleChange}
         value={this.props.value}
-        style={{
-        width: "50%",
-        marginLeft: "25%",
-        marginRight: 5,
-        marginTop: 40}}
         className="img-fluid rounded pl-2" 
         type="text" 
         id="search-bar" 
         placeholder="Enter Address"
       />
 
-      <img 
-        onClick={this.props.handleSubmit}
+      <input 
         className="search-icon" 
-        src="http://findicons.com/files/icons/1254/flurry_system/256/search.png" 
+        type='image'
+        src="./../../images/search.png" 
         width="35" 
         height="35"
         alt="search-button"
       />
-    </div>
+    </form>
     )
   }
 };

@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 const CustomerOrders = (props) => {
 
-    const {buyerFirstName, buyerLastName, customerId, date, items, orderTotal, pickedUp, sellerFirstName, sellerId, sellerLastName, status, storeId} = props.item;
+    const {items, sellerFirstName, sellerLastName} = props.item;
 
     // Render li tag with props.children 
     return (
