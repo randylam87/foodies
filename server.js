@@ -41,7 +41,6 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({
     type: 'application/vnd.api+json'
 }));
-app.use(cookieParser());
 
 // Serve files from the public folder
 app.use(express.static(path.resolve(__dirname, 'build')));
