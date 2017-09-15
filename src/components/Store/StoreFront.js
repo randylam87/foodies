@@ -129,7 +129,7 @@ class StoreFront extends Component {
 
   addToOrder(order) {
     let currentOrderTotal =this.state.orderTotal
-    let newTotal = currentOrderTotal += parseInt(order.price);
+    let newTotal = currentOrderTotal += parseInt(order.price,10);
     this.setState({
       customerOrder: this.state.customerOrder.concat(order),
       orderTotal: newTotal

@@ -2,7 +2,7 @@ import React from 'react';
 
 const CustomerBookmarks = (props) => {
     
-        const {sellerId, storeId, storeLocation, storeName, userFirstName, userId, userLastName} = props.item;
+        const { storeLocation, storeName } = props.item;
         // Render li tag with props.children 
         return (
             <li className="list-group-item">

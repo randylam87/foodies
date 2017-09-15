@@ -41,7 +41,6 @@ class CustomerAdmin extends Component {
             orders: userOrders,
             reviews: userReviews,
             bookmarks: userBookmarks,
-            profilephoto: userPhoto
           });
         }); 
     }

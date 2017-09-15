@@ -7,7 +7,6 @@ const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 
 //Mongo/Mongoose --------------------------------------------------------------
-const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 const DBconnect = 'mongodb://heroku_nw4cdrcw:1ugvn0ia962k55jn8c6svnsd5h@ds135514.mlab.com:35514/heroku_nw4cdrcw';
 
@@ -42,7 +41,6 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({
     type: 'application/vnd.api+json'
 }));
-app.use(cookieParser());
 
 // Serve files from the public folder
 app.use(express.static(path.resolve(__dirname, 'build')));
@@ -50,14 +48,14 @@ app.use(express.static(path.resolve(__dirname, 'build')));
 //Sets up express routes
 const authRoutes = require('./server/routes/auth');
 const apiRoutes = require('./server/routes/api');
-const secureRoutes = require('./server/routes/secure'); //future secure route
+const secureRoutes = require('./server/routes/secure');
 // Pass the authenticaion checker middleware
 const authCheckMiddleware = require('./server/middleware/auth-check');
 // app.use('/api', authCheckMiddleware);
 app.use('/auth', authRoutes);
 app.use('/api', apiRoutes);
-app.use('/secure', authCheckMiddleware); //future secure route
-app.use('/secure', secureRoutes); //future secure route
+app.use('/secure', authCheckMiddleware);
+app.use('/secure', secureRoutes);
 
 // Passport ------------------------------------------------------------------
 
@@ -91,10 +89,9 @@ server.listen(PORT, () => {
     console.log(`The server is listening on port ${PORT}`);
 });
 
-
 //Socket IO
-io.on('connection', function(socket) {
-    socket.on('users', function(data) {
+io.on('connection', (socket) => {
+    socket.on('users', (data) => {
         if (data.message == "Store Updated") {
             io.emit(data.storeID, {
                 message: data.message
