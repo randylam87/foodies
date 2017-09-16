@@ -16,14 +16,16 @@ body {
   font-family: Lobster Two, cursive;
   font-size: 10em;
   color: #FBF7F7;
+  margin-bottom: 0.25em;
 }
 
 #search-bar {
-  width: 50%;
+  width: 35%;
 }
 
 #search-container {
-  margin-left: 25%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .white .white:hover,
