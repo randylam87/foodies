@@ -23,6 +23,12 @@ body {
   width: 35%;
 }
 
+#search-icon {
+  background: transparent;
+  color: white;
+  border-color: transparent;
+}
+
 #search-container {
   margin: 0 auto;
   text-align: center;
