@@ -5,7 +5,7 @@ export default class Search extends Component {
     return (
       <form id="search-container" onSubmit={ this.props.handleSubmit }>
         <input onChange={ this.props.handleChange } value={ this.props.value } className="rounded pl-2" type="text" id="search-bar" placeholder="Enter Address" />
-        <button className="search-icon" type='submit' alt="search-button"> <i className="fa fa-search" aria-hidden="true"></i>
+        <button id='search-icon' type='submit' alt="search-button"> <i className="fa fa-search" aria-hidden="true"></i>
         </button>
       </form>
     )

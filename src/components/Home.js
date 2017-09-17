@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Search from './Homepage/Search';
-import Image from './Homepage/Image';
 import MapSearch from './MapSearch/MapSearch';
 import axios from 'axios';
 
@@ -68,7 +67,6 @@ class Home extends Component {
           ) : (
           <Search value={ this.state.value } handleChange={ this.handleChange } handleSubmit={ this.handleSubmit } />
           ) }
-        <Image />
       </div>
       );
   }
