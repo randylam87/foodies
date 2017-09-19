@@ -31,10 +31,12 @@ class Nav extends Component {
   queryOrders() {
     let userID = Auth.getUserId();
     let activeOrders = [];
-    Helpers.getOrdersCustomer(userID).then((response)=>{
-      response.data.map((orders)=>{
+    Helpers.getOrdersCustomer(userID)
+    .then((response) => {
+      // eslint-disable-next-line
+      response.data.map((orders) => {
         if(!orders.pickedUp){ //if order is picked up, dont show it
-          activeOrders.push(orders);
+         activeOrders.push(orders);
         }
       })
       this.setState({messages: activeOrders})

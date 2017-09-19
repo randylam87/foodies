@@ -25,6 +25,7 @@ class Message extends Component {
   listMenuItems() {
     let userID = Auth.getUserId();
     let allMessages;
+    // eslint-disable-next-line
     allMessages = this.props.messages.map((message) => {
       if (userID === message.sellerId) { //if seller and menu item isnt declined
         return <MessageItems customerID={ message.customerId } sellerId={ message.sellerId } requery={ this.props.requery } entire={ message } customerName={ message.buyerFirstName + " " + message.buyerLastName }
@@ -44,9 +45,9 @@ class Message extends Component {
   render() {
     return (
       <div className="dropdown">
-        <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="#">
+        <button id="dLabel" data-toggle="dropdown">
           <i className="fa fa-cutlery mr-2" aria-hidden="true"></i> <span className="badge badge-danger">{ this.props.messages.length }</span>
-        </a>
+        </button>
         <ul className="dropdown-menu notifications" role="menu" aria-labelledby="dLabel">
           <div className="notification-heading">
             <h4 className="menu-title">Messages</h4>
