@@ -26,13 +26,17 @@
     "validator": "^8.1.0"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.4",
     "html-webpack-plugin": "^2.30.1",
+    "jasmine-core": "^2.8.0",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.0",
+    "nodemon": "^1.11.0",
     "style-loader": "^0.18.2",
     "webpack": "^3.5.4",
     "webpack-dev-server": "^2.7.1"

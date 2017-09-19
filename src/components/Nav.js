@@ -10,18 +10,12 @@ class Nav extends Component {
     this.state = {
       messages: []
     };
-
   this.queryOrders = this.queryOrders.bind(this);
-  // this.setSave = this.setSave.bind(this);
   }
 
   componentDidMount(){
     this.queryOrders();
   }
-
-  // componentDidUpdate(){
-  //   this.queryOrders();
-  // }
 
   handleClick() {
     Auth.deauthenticateUser();

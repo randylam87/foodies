@@ -29,7 +29,7 @@ db.once('openUri', () => {
 // Initialize express app
 const app = express();
 const server = require('http').createServer(app);
-var io = require('socket.io')(server);
+const io = require('socket.io')(server);
 const PORT = process.env.PORT || 8080;
 
 // Use body parser to parse incoming requests as json
