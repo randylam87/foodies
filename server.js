@@ -51,7 +51,6 @@ const apiRoutes = require('./server/routes/api');
 const secureRoutes = require('./server/routes/secure');
 // Pass the authenticaion checker middleware
 const authCheckMiddleware = require('./server/middleware/auth-check');
-// app.use('/api', authCheckMiddleware);
 app.use('/auth', authRoutes);
 app.use('/api', apiRoutes);
 app.use('/secure', authCheckMiddleware);

@@ -1,17 +1,15 @@
 // Axios dependencies for GET/POST requests
 const axios = require('axios');
 
-let helpers = {
+class Helpers {
 
   getStore(storeID) {
     return axios.get('api/store/' + storeID)
-  },
-
-
+  }
 
   getPublicReview(sellerId) {
     return axios.get('./../api/review/' + sellerId)
-  },
+  }
 
   logIn(credentials) {
     return axios.post('/auth/login', {
@@ -19,7 +17,7 @@ let helpers = {
       password: credentials.password
     }
     )
-  },
+  }
 
   signup(credentials) {
     return axios.post('/auth/signup', {
@@ -29,7 +27,7 @@ let helpers = {
       password: credentials.password
     }
     )
-  },
+  }
 
   getUser(id, token) {
     return axios.get(`/api/user/${id}`, {
@@ -37,11 +35,11 @@ let helpers = {
         authorization: token
       }
     });
-  },
+  }
 
   saveStore(storeID, storeData) {
     return axios.put("api/store/" + storeID, storeData)
-  },
+  }
 
   // Randy's routes
   getUserSecure(id, token) {
@@ -50,7 +48,7 @@ let helpers = {
         authorization: token
       }
     });
-  },
+  }
 
   postReview(sellerId,review,token) {
     return axios.post(`./../secure/review/${sellerId}`,{
@@ -66,7 +64,7 @@ let helpers = {
         authorization: token
       }
     });
-  },
+  }
 
   placeOrder(storeId, order, token) {
     return axios.post(`./../secure/order/${storeId}`, {
@@ -84,7 +82,7 @@ let helpers = {
         authorization: token
       }
     })
-  },
+  }
 
   bookmarkStore(storeData, token) {
     return axios.post(`./../secure/bookmark/`, {
@@ -100,7 +98,7 @@ let helpers = {
         authorization: token
       }
     })
-  },
+  }
 
   removeBookmark(storeData, token) {
     return axios({
@@ -115,23 +113,23 @@ let helpers = {
         authorization: token
       }
     });
-  },
+  }
 
   getPublicStore(sellerId) {
     return axios.get('./../api/store/' + sellerId)
-  },
+  }
 
   getOrders(sellerID) {
     return axios.get('api/order/' + sellerID);
-  },
+  }
 
   getOrdersCustomer(ID) {
     return axios.get('./../api/order/' + ID);
-  },
+  }
 
   updateOrderStatus(sellerID, newOrder){
     return axios.put('api/order/' + sellerID, newOrder);
-  },
+  }
 
   updateOrderStatusCustomer(sellerID, newOrder){
     return axios.put('./../api/order/' + sellerID, newOrder);
@@ -139,4 +137,4 @@ let helpers = {
 }
 
 // Export API Helper
-module.exports = helpers
+module.exports = Helpers
