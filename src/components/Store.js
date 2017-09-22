@@ -3,10 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import StoreFront from './Store/StoreFront';
 import WriteReview from './Store/WriteReview';
 
-// import helpers from './utils/helpers';
-
-// Store front is accessed via /store/:storeID?
-
 class Store extends Component {
   constructor(props) {
     super(props)

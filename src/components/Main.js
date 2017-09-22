@@ -25,7 +25,6 @@ export default class Main extends Component {
               <div className='main'>
                 <Nav />
                 <div className='container-fluid'>
-
                     <Switch>
                         <Route exact path='/' component={ Home }  />
                         <Route path='/map' component={MapSearch} />
